@@ -10,7 +10,8 @@ import com.example.expencemanager.databinding.ActivityTransactionBinding
 
 class TransactionActivity : AppCompatActivity() {
 
-    lateinit var db1: DatabaseHelper
+
+     lateinit var db1:DatabaseHelper
     lateinit var adapter:AlldataAdapter
     var Alldatalist = ArrayList<AllDataModel>()
 
@@ -20,14 +21,16 @@ class TransactionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initview()
 
         db1 = DatabaseHelper(this, "DatabaseWord.db", null, 1)
 
+        initview()
     }
 
     private fun initview() {
 
+
+        Alldatalist=db1.Alldatadispalay()
 
         val adapter = AlldataAdapter(this,Alldatalist)
         val manager = LinearLayoutManager(this@TransactionActivity, RecyclerView.VERTICAL, false)
@@ -35,7 +38,6 @@ class TransactionActivity : AppCompatActivity() {
         binding.rcvdata.setLayoutManager(manager)
         binding.rcvdata.setAdapter(adapter)
 
-        Alldatalist=db1.Alldatadispalay()
 
     }
 }

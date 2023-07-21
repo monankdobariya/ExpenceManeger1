@@ -13,17 +13,22 @@
         android:theme="@style/Theme.ExpenceManager"
         tools:targetApi="31">
         <activity
+            android:name=".SpalshActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
             android:name=".TransactionActivity"
             android:exported="false" />
         <activity
             android:name=".PaymentActivity"
             android:exported="false" />
-        <activity
-            android:name=".CustomRecycleDialogActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CoustomRecycleActivity"
-            android:exported="false" />
+
         <activity
             android:name=".IncomeActivity"
             android:exported="false" />
@@ -33,9 +38,7 @@
         <activity
             android:name=".Exported_reports_Activity"
             android:exported="false" />
-        <activity
-            android:name=".ExportedActivity"
-            android:exported="false" />
+
         <activity
             android:name=".CalanderActivity"
             android:exported="false" />
@@ -45,11 +48,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
